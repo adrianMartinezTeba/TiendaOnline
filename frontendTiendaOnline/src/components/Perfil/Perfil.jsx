@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UsersContext } from "../../context/UserContext/UserState";
-import { Card, Spin, Collapse } from "antd";
+import {  Spin } from "antd";
 const Perfil = () => {
-  const { Panel } = Collapse;
   const { getUserInfo, user } = useContext(UsersContext);
   useEffect(() => {
     getUserInfo();

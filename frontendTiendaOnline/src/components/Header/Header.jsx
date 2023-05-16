@@ -17,7 +17,7 @@ const Header = () => {
                 {hasToken ? (
                     <>
                         <Link to={'/'}><button onClick={logout}>Logout</button></Link>
-                        <Link to={'/user'}><button>Perfil</button></Link>
+                        <Link to={'/perfil'}><button>Perfil</button></Link>
                     </>
                 ) : (
                     <Link to={'/login'}><button>Login</button></Link>

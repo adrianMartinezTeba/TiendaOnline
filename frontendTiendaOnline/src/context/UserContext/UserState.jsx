@@ -74,7 +74,8 @@ const initialState = {
             login,
             getUsers,
             logout,
-            getUserInfo
+            getUserInfo,
+            register
           }}
         >
           {children}

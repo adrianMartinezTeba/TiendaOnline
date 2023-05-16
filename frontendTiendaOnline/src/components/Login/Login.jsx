@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 //componente utilizando antd
 import { Button, Form, Input, notification } from "antd";
 import { UsersContext } from "../../context/UserContext/UserState";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login, message, token} = useContext(UsersContext);
@@ -25,6 +25,7 @@ const Login = () => {
   };
   return (
     <div>
+        <h3>Loggeate antes de comprar</h3>
       <Form
         name="basic"
         labelCol={{
@@ -73,7 +74,7 @@ const Login = () => {
             offset: 8,
             span: 16,
           }}
-        >
+        ><p>Si no te has registrado click <Link to={'/register'}>aqui</Link></p>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
