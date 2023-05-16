@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 import axios from "axios";
 import UserReducer from './UserReducer'
+
 const initialState = {
     user: [],
   };
@@ -49,7 +50,19 @@ const initialState = {
         });
         if (res.data) {
           localStorage.removeItem("token");
+          console.log('Desconectado con exito');
         }
+      };const getUserInfo= async()=>{
+        const token = JSON.parse(localStorage.getItem("token"))
+        const res = await axios.get(`${API_URL}/users/user`,{
+            headers:{
+                Authorization:token
+            }
+        })
+        dispatch({
+            type:"GET_USER",
+            payload:res.data
+        })
       };
       return (
         <UsersContext.Provider
@@ -60,7 +73,8 @@ const initialState = {
             logoutMessage:state.logoutMessage,
             login,
             getUsers,
-            logout
+            logout,
+            getUserInfo
           }}
         >
           {children}

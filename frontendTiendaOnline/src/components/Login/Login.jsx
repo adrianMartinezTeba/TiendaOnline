@@ -5,7 +5,7 @@ import { UsersContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { login, message, token,logout } = useContext(UsersContext);
+  const { login, message, token} = useContext(UsersContext);
   const navigate = useNavigate();
   const onFinish = (values) => {
     login(values);
@@ -13,12 +13,10 @@ const Login = () => {
 
   useEffect(() => {
     if (token) {
-      navigate("/products");
-    }
-    if (message) {
+      navigate("/");
       notification.success({
         message: message,
-      });
+      })
     }
   }, [token]);
 

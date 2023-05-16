@@ -7,6 +7,7 @@ import  Header  from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { UsersProvider } from "./context/UserContext/UserState";
 import Login from "./components/Login/Login";
+import Perfil from "./components/Perfil/Perfil";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/products" element={<Products/>} />
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/user" element={<Perfil/>}/>
         </Routes>
         <Footer/>
         </UsersProvider>
