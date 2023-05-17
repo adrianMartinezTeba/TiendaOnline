@@ -4,6 +4,7 @@ import "./Products.scss";
 import { Link } from "react-router-dom";
 const Products = () => {
     const { products, getProducts, addCart,cart} = useContext(ProductsContext);
+    const token = JSON.parse(localStorage.getItem("token"));
     useEffect(() => {
         getProducts();
       
@@ -19,7 +20,9 @@ const Products = () => {
             <div key={product.id}>
                 <p>{product.name}</p>
                 <p>{product.price} €</p>
-                <button onClick={() => addCart(product)}>Add Cart</button>
+                {token ? (
+          <button onClick={() => addCart(product)}>Add Cart</button>
+        ) : null}
             </div>
         )
     });

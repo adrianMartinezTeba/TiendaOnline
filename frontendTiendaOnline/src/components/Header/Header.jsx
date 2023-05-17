@@ -7,7 +7,7 @@ const Header = () => {
     const { logout } = useContext(UsersContext);
 
     // Comprobar si el usuario ha iniciado sesión
-    const hasToken = !!localStorage.getItem("token");
+    const hasToken = localStorage.getItem("token");
 
     return (
         <div>
@@ -21,7 +21,7 @@ const Header = () => {
                         <Link to={'/cart'}><button>Cart</button></Link>
                     </>
                 ) : (
-                    <Link to={'/login'}><button>Login</button></Link>
+                    <Link to={'/login'}><button>Login For Buy</button></Link>
                 )}
             </nav>
         </div>
