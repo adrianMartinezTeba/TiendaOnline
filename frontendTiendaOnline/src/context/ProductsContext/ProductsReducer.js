@@ -4,7 +4,23 @@ const products = (state, action) => {
         return {
           ...state,//para que no se borre el estado anterior
           products: action.payload,//el payload es la informacion que nos viene de la peticion
-        }
+        };case "ADD_CART":
+
+        return {
+        
+        ...state,
+        
+        cart: [action.payload, ...state.cart],
+        
+        };case "CLEAR_CART":
+
+        return {
+        
+        ...state,
+        
+        cart: [],
+        
+        };
       default:
         return state;
     }

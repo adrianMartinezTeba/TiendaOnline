@@ -18,6 +18,7 @@ const Header = () => {
                     <>
                         <Link to={'/'}><button onClick={logout}>Logout</button></Link>
                         <Link to={'/perfil'}><button>Perfil</button></Link>
+                        <Link to={'/cart'}><button>Cart</button></Link>
                     </>
                 ) : (
                     <Link to={'/login'}><button>Login</button></Link>

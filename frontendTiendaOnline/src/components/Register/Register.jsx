@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import { UsersContext } from '../../context/UserContext/UserState';
 const API_URL = 'http://localhost:8080'
 
+
 const RegisterForm = () => {
+    const {login} = useContext(UsersContext)
     const navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
@@ -12,12 +15,17 @@ const RegisterForm = () => {
     role: '',
     dni: ''
   });
+  const [loginValues,setLoginValues] = useState({
+    email:'',
+    password:''
+  })
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
+    setLoginValues({...loginValues,[name]:value})
   };
 
   const handleSubmit = async (event) => {
