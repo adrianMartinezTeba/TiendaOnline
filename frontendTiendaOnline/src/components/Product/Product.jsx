@@ -38,7 +38,6 @@ const Product = () => {
       {token && (
         <button onClick={handleAddToCart}>Add to Cart</button>
       )}
-      {/* Mostrar el resto de los detalles del producto aquí */}
     </div>
   );
 };
