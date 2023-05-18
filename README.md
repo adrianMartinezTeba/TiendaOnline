@@ -1,6 +1,7 @@
 # Tienda Online
 Este es un proyecto de una tienda online desarrollado con React y Node.js. Proporciona una plataforma para que los usuarios puedan comprar productos y realizar pedidos en línea.
-
+## Tecnologías usadas
+Para este proyecto de front-end he usado react que nos permite mezclas html y javascript en un mismo archivo tipo .jsx,además hemos usado una base de datos creado con MySQL y sequelize. No olvidar el uso de Node.js
 ## Características
 Registro de usuarios
 ``` js
