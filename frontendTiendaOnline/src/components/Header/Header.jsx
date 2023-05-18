@@ -1,32 +1,46 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import './Header.scss'
-import { UsersContext } from "../../context/UserContext/UserState"
+import { Button } from "antd";
+import "./Header.scss";
+import { UsersContext } from "../../context/UserContext/UserState";
 
 const Header = () => {
-    const { logout } = useContext(UsersContext);
+  const { logout } = useContext(UsersContext);
 
-    // Comprobar si el usuario ha iniciado sesión
-    const hasToken = localStorage.getItem("token");
+  // Comprobar si el usuario ha iniciado sesión
+  const hasToken = localStorage.getItem("token");
 
-    return (
-        <div>
-            <nav>
-                <Link to={'/'}><button>Home</button></Link>
-                <Link to={'/products'}><button>Products</button></Link>
-                {hasToken ? (
-                    <>
-                        <Link to={'/'}><button onClick={logout}>Logout</button></Link>
-                        <Link to={'/perfil'}><button>Perfil</button></Link>
-                        <Link to={'/cart'}><button>Cart</button></Link>
-                    </>
-                ) : (
-                    <Link to={'/login'}><button>Login For Buy</button></Link>
-                )}
-            </nav>
-        </div>
-
-    );
+  return (
+    <div className="header">
+      <nav>
+        <Link to={"/"}>
+          <Button type="text">Home</Button>
+        </Link>
+        <Link to={"/products"}>
+          <Button type="text">Products</Button>
+        </Link>
+        {hasToken ? (
+          <>
+            <Link to={"/"}>
+              <Button type="text" onClick={logout}>
+                Logout
+              </Button>
+            </Link>
+            <Link to={"/perfil"}>
+              <Button type="text">Perfil</Button>
+            </Link>
+            <Link to={"/cart"}>
+              <Button type="text">Cart</Button>
+            </Link>
+          </>
+        ) : (
+          <Link to={"/login"}>
+            <Button type="text">Login For Buy</Button>
+          </Link>
+        )}
+      </nav>
+    </div>
+  );
 };
 
 export default Header;

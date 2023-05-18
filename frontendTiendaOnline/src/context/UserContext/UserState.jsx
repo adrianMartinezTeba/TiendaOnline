@@ -4,6 +4,7 @@ import UserReducer from './UserReducer'
 
 const initialState = {
     user: [],
+    // order:[]
   };
   
   const API_URL = "http://localhost:8080";
@@ -54,16 +55,18 @@ const initialState = {
         }
       };const getUserInfo= async()=>{
         const token = JSON.parse(localStorage.getItem("token"))
-        const res = await axios.get(`${API_URL}/users/user`,{
+        const res = await axios.get(`${API_URL}/users/userOrders`,{
             headers:{
                 Authorization:token
             }
         })
+        console.log(res.data.userOrders)
         dispatch({
             type:"GET_USER",
-            payload:res.data
+            payload:res.data.userOrders
         })
-      };
+      };  
+      
       return (
         <UsersContext.Provider
           value={{
@@ -74,7 +77,7 @@ const initialState = {
             login,
             getUsers,
             logout,
-            getUserInfo
+            getUserInfo,
           }}
         >
           {children}

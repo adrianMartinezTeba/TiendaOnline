@@ -18,7 +18,6 @@ export const ProductsProvider = ({ children }) => {
   const getProducts = async () => {
     try {
       const res = await axios.get(API_URL + "/products/getAllProducts");
-      console.log(res);
       dispatch({
         type: "GET_PRODUCTS",//tiene que ser lo mismo que el caso del reduce es como para indicar a donde tiene que ir
         payload: res.data.getAllProducts,

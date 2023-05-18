@@ -1,0 +1,44 @@
+.perfil-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .perfil-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .perfil-container p {
+    margin-bottom: 5px;
+  }
+  
+  .perfil-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .perfil-container li {
+    margin-bottom: 10px;
+  }
+  
+  .perfil-container h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .perfil-container ul ul {
+    margin-left: 20px;
+  }
+  
+  .perfil-container ul ul li {
+    font-style: italic;
+  }
+  
+  .spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  

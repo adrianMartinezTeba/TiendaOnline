@@ -24,6 +24,7 @@ const users = (state, action) => {
         user: action.payload,
         message: "",
       };
+
       default:
         return state;
     }

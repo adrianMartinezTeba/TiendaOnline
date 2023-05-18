@@ -11,6 +11,8 @@ import Perfil from "./components/Perfil/Perfil";
 import RegisterForm from "./components/Register/Register";
 import { OrdersProvider } from "./context/OrdersContext/OrdersState";
 import Cart from "./components/Cart/Cart";
+import Product from "./components/Product/Product";
+
 
 
 
@@ -23,6 +25,7 @@ function App() {
             <OrdersProvider>
             <Header />
             <Routes>
+              <Route path="/product/:id"element={<Product/>} />
               <Route path="/products" element={<Products />} />
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />}/>

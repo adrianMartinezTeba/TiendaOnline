@@ -1,0 +1,44 @@
+// @import '~antd/dist/antd.css';
+
+.header {
+  background-color: #f0f0f0;
+  padding: 20px;
+
+  // Estilos responsivos
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+
+    // Estilos responsivos
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    a {
+      margin-left: 10px;
+
+      // Estilos responsivos
+      @media (max-width: 768px) {
+        margin-left: 5px;
+      }
+
+      .ant-btn {
+        padding: 5px 10px;
+        border: none;
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          color: #fff;
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
